@@ -66,7 +66,7 @@ export class CrudDocenteComponent implements OnInit {
     });
   }
 
- ngOnInit(): void {}
+  ngOnInit(): void {}
 
  consultaDocente(){
       console.log(">>> consultaDocente >>> " +  this.filtro);
