@@ -19,6 +19,8 @@
           </mat-checkbox>
 
           <button mat-raised-button type="submit" color="primary" (click)="consulta()">Filtrar</button>
+          <button mat-raised-button type="submit" color="warn" (click)="exportarPDF()">PDF</button>
+           
            
      </div>
 
@@ -90,7 +92,7 @@
             <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
         
         </mat-table>
-        <mat-paginator [pageSizeOptions]="[2, 4, 6]" showFirstLastButtons></mat-paginator>
+        <mat-paginator [pageSizeOptions]="[10,15]" showFirstLastButtons></mat-paginator>
 
     </div>
         

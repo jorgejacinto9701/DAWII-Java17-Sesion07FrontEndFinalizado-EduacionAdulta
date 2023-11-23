@@ -72,4 +72,23 @@ export class ConsultaDocenteComponent {
        );
   }
 
+  exportarPDF() {
+
+    this.docenteService.generateDocumentReport(this.nombre, this.dni, this.estado ? 1 : 0, this.selDistrito).subscribe(
+          response => {
+            console.log(response);
+            var url = window.URL.createObjectURL(response.data);
+            var a = document.createElement('a');
+            document.body.appendChild(a);
+            a.setAttribute('style', 'display: none');
+            a.setAttribute('target', 'blank');
+            a.href = url;
+            a.download = response.filename;
+            a.click();
+            window.URL.revokeObjectURL(url);
+            a.remove();
+        }); 
+  }
+
+
 }
